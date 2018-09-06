@@ -1,0 +1,1 @@
+web: gunicorn ithome_chatbot.wsgi
