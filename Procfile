@@ -1,1 +1,1 @@
-web: gunicorn ithome_chatbot.wsgi
+web: gunicorn project_iThome.wsgi
