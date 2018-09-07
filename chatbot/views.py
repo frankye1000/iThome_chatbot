@@ -41,11 +41,11 @@ def handle_message(event):
 # def handle_postback_message(event):
 #     postback(event)
 #
-# @handler.add(FollowEvent)
-# def handle_follow_event(event):
-#     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="您好，\n歡迎使用iThome聊天機器人"))
-#     line_bot_api.push_message(event.source.user_id, StickerSendMessage(package_id='1', sticker_id='13'))
-#     line_bot_api.push_message(event.source.user_id,
-#                                TextSendMessage(text="每日接收最新的iThome資訊"))
-#     line_bot_api.push_message(event.source.user_id,
-#                                TextSendMessage(text="每日晚上六點準時更新"))
+@handler.add(FollowEvent)
+def handle_follow_event(event):
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="您好，\n歡迎使用iThome聊天機器人"))
+    line_bot_api.push_message(event.source.user_id, StickerSendMessage(package_id='1', sticker_id='13'))
+    line_bot_api.push_message(event.source.user_id,
+                               TextSendMessage(text="每日接收最新的iThome資訊"))
+    line_bot_api.push_message(event.source.user_id,
+                               TextSendMessage(text="每日晚上六點準時更新"))
