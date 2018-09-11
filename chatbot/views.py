@@ -16,10 +16,9 @@ scheduler.add_jobstore(DjangoJobStore(), "default")
 scheduler.start()
 p="t"
 def time_task(p):
-    print("I'm a test job!")
-    # line_bot_api.push_message()
+    line_bot_api.push_message("U0bc9c3e3b5de7dd56e1388f8241cd29d", TextSendMessage(text="I'm a test job!"))
 
-scheduler.add_job(time_task, "cron", minute=2, args=p)
+scheduler.add_job(time_task, "cron", second=2, args=p)
 register_events(scheduler)
 
 
