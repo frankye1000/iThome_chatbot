@@ -18,7 +18,7 @@ p="t"
 def time_task(p):
     print("I'm a test job!")
 
-scheduler.add_job(time_task, "cron", second=2, misfire_grace_time=30, args=p)
+scheduler.add_job(time_task, "cron", second=2, args=p)
 register_events(scheduler)
 
 
