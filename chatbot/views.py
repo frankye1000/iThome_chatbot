@@ -14,7 +14,7 @@ scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "default")
 
 scheduler.start()
-p="task"
+p="t"
 def time_task(p):
     print("I'm a test job!")
 
