@@ -15,15 +15,11 @@ scheduler.add_jobstore(DjangoJobStore(), "default")
 
 scheduler.start()
 
-def time_task(task):
+def time_task():
     print("I'm a test job!")
 
 scheduler.add_job(time_task, "cron", second=2, misfire_grace_time=30)
 register_events(scheduler)
-
-
-
-
 
 
 
