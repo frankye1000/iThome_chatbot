@@ -5,7 +5,25 @@ from linebot.exceptions import InvalidSignatureError, LineBotApiError
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, FollowEvent,TemplateSendMessage,StickerSendMessage,PostbackEvent,TextSendMessage
-# from .robot import response, postback
+
+
+from apscheduler.schedulers.background import BackgroundScheduler
+from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
+
+scheduler = BackgroundScheduler()
+scheduler.add_jobstore(DjangoJobStore(), "default")
+
+scheduler.start()
+
+def time_task(task):
+    print("I'm a test job!")
+
+scheduler.add_job(time_task, "cron", second=2, misfire_grace_time=30)
+register_events(scheduler)
+
+
+
+
 
 
 
