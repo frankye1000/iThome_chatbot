@@ -17,8 +17,9 @@ scheduler.start()
 p="t"
 def time_task(p):
     print("I'm a test job!")
+    # line_bot_api.push_message()
 
-scheduler.add_job(time_task, "cron", second=2, args=p)
+scheduler.add_job(time_task, "cron", minute=2, args=p)
 register_events(scheduler)
 
 
@@ -47,8 +48,8 @@ def callback(request):
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    # print(event)
-    # response(event)
+    print(event)
+
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="您好，\n歡迎使用iThome聊天機器人"))
 
 # @handler.add(PostbackEvent)
