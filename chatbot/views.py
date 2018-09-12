@@ -41,7 +41,7 @@ def push_message(p):
     # line_bot_api.push_message( user_id, TextSendMessage(text="最新消息!!!"))
     line_bot_api.push_message( user_id, carousel_template_message())
 
-scheduler.add_job(push_message , "interval", minutes=60, args=p)
+scheduler.add_job(push_message , "interval", hours=10, args=p)
 register_events(scheduler)
 
 

@@ -1,9 +1,5 @@
 from linebot.models import (
-    TemplateSendMessage, ButtonsTemplate,
-    PostbackTemplateAction, MessageTemplateAction,
-    URITemplateAction, DatetimePickerTemplateAction,
-    ConfirmTemplate, CarouselTemplate, CarouselColumn
-)
+    TemplateSendMessage, URITemplateAction, CarouselTemplate, CarouselColumn)
 from .crawl_ithome import crawl_ithome
 
 def carousel_template_message():
