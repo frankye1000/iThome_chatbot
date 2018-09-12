@@ -34,7 +34,7 @@ def crawl_ithome():
                 re.append((title,url,day,photo))
 
     return re
-print(crawl_ithome())
+
 
 # ## "依序"一次插入一筆資料
 # count=1

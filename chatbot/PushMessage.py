@@ -12,81 +12,81 @@ def carousel_template_message():
     template=CarouselTemplate(
         columns=[
             CarouselColumn(
-                thumbnail_image_url = crawl_ithome[0][3],
-                title=crawl_ithome[0][0],
+                thumbnail_image_url = crawl_ithome()[0][3],
+                title=crawl_ithome()[0][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     PostbackTemplateAction(
                         label='日期',
-                        data=crawl_ithome[0][2]
+                        data=crawl_ithome()[0][2]
                     ),
                     URITemplateAction(
                         label='更多',
-                        uri = crawl_ithome[0][1]
+                        uri = crawl_ithome()[0][1]
                     )
 
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url=crawl_ithome[1][3],
-                title=crawl_ithome[1][0],
+                thumbnail_image_url=crawl_ithome()[1][3],
+                title=crawl_ithome()[1][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     PostbackTemplateAction(
                         label='日期',
-                        data=crawl_ithome[1][2]
+                        data=crawl_ithome()[1][2]
                     ),
                     URITemplateAction(
                         label='更多',
-                        uri=crawl_ithome[1][1]
+                        uri=crawl_ithome()[1][1]
                     )
 
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url=crawl_ithome[2][3],
-                title=crawl_ithome[2][0],
+                thumbnail_image_url=crawl_ithome()[2][3],
+                title=crawl_ithome()[2][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     PostbackTemplateAction(
                         label='日期',
-                        data=crawl_ithome[2][2]
+                        data=crawl_ithome()[2][2]
                     ),
                     URITemplateAction(
                         label='更多',
-                        uri=crawl_ithome[2][1]
+                        uri=crawl_ithome()[2][1]
                     )
 
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url=crawl_ithome[3][3],
-                title=crawl_ithome[3][0],
+                thumbnail_image_url=crawl_ithome()[3][3],
+                title=crawl_ithome()[3][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     PostbackTemplateAction(
                         label='日期',
-                        data=crawl_ithome[3][2]
+                        data=crawl_ithome()[3][2]
                     ),
                     URITemplateAction(
                         label='更多',
-                        uri=crawl_ithome[3][1]
+                        uri=crawl_ithome()[3][1]
                     )
 
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url=crawl_ithome[4][3],
-                title=crawl_ithome[4][0],
+                thumbnail_image_url=crawl_ithome()[4][3],
+                title=crawl_ithome()[4][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     PostbackTemplateAction(
                         label='日期',
-                        data=crawl_ithome[4][2]
+                        data=crawl_ithome()[4][2]
                     ),
                     URITemplateAction(
                         label='更多',
-                        uri=crawl_ithome[4][1]
+                        uri=crawl_ithome()[4][1]
                     )
 
                 ]
