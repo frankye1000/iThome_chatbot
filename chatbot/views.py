@@ -39,6 +39,7 @@ p="t"
 def push_message(p):
     user_id="U0bc9c3e3b5de7dd56e1388f8241cd29d"
     line_bot_api.push_message( user_id, TextSendMessage(text="I'm a test job!"))
+    print(carousel_template_message())
     line_bot_api.push_message( user_id, carousel_template_message())
 
 scheduler.add_job(push_message , "cron", second=10, args=p)
