@@ -22,7 +22,7 @@ def carousel_template_message():
         columns=[
             CarouselColumn(
                 thumbnail_image_url = crawl_ithome()[0][3],
-                title=crawl_ithome()[0][0],
+                title=crawl_ithome()[0][0][:40],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     URITemplateAction(
