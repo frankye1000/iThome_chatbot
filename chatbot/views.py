@@ -7,18 +7,10 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, FollowEvent,TemplateSendMessage,StickerSendMessage,PostbackEvent,TextSendMessage
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
-
+from .PushMessage import carousel_template_message
 scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "default")
-
 scheduler.start()
-p="t"
-def time_task(p):
-    line_bot_api.push_message("U0bc9c3e3b5de7dd56e1388f8241cd29d", TextSendMessage(text="I'm a test job!"))
-
-scheduler.add_job(time_task, "cron", hour=1, args=p)
-register_events(scheduler)
-
 
 
 # Create your views here.
@@ -42,6 +34,16 @@ def callback(request):
     else:
         return HttpResponseBadRequest()
 
+## 每天的排程
+p="t"
+def push_message(p):
+    user_id="U0bc9c3e3b5de7dd56e1388f8241cd29d"
+    line_bot_api.push_message( user_id, TextSendMessage(text="I'm a test job!"))
+    line_bot_api.push_message( user_id, carousel_template_message())
+
+scheduler.add_job(push_message , "cron", second=10, args=p)
+register_events(scheduler)
+
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -49,10 +51,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="您好，\n歡迎使用iThome聊天機器人"))
 
-# @handler.add(PostbackEvent)
-# def handle_postback_message(event):
-#     postback(event)
-#
+
 @handler.add(FollowEvent)
 def handle_follow_event(event):
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="您好，\n歡迎使用iThome聊天機器人"))

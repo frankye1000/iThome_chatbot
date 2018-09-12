@@ -13,6 +13,7 @@ today = date.today()
 today = today.strftime("%Y-%m-%d")
 
 def crawl_ithome():
+    re=[]
     for p in range(2):
 
         r = requests.get("https://www.ithome.com.tw/news?page=%s"%p)
@@ -30,10 +31,10 @@ def crawl_ithome():
             photo = select_photo[0].get('src')
 
             if day == today:
-                return (title,url,day,photo)
+                re.append((title,url,day,photo))
 
-
-crawl_ithome()
+    return re
+print(crawl_ithome())
 
 # ## "依序"一次插入一筆資料
 # count=1

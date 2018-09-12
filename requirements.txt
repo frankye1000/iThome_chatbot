@@ -8,11 +8,14 @@ Django==2.1.1
 django-apscheduler==0.2.13
 future==0.16.0
 gunicorn==19.9.0
+html5lib==1.0.1
 idna==2.7
 line-bot-sdk==1.8.0
+lxml==4.2.5
 pytz==2018.5
 requests==2.19.1
 six==1.11.0
 tzlocal==1.5.1
 urllib3==1.23
+webencodings==0.5.1
 wincertstore==0.2
