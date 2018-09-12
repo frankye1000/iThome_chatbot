@@ -5,8 +5,6 @@ from linebot.exceptions import InvalidSignatureError, LineBotApiError
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, FollowEvent,TemplateSendMessage,StickerSendMessage,PostbackEvent,TextSendMessage
-
-
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
 
@@ -18,7 +16,7 @@ p="t"
 def time_task(p):
     line_bot_api.push_message("U0bc9c3e3b5de7dd56e1388f8241cd29d", TextSendMessage(text="I'm a test job!"))
 
-scheduler.add_job(time_task, "cron", second=2, args=p)
+scheduler.add_job(time_task, "cron", hour=1, args=p)
 register_events(scheduler)
 
 
