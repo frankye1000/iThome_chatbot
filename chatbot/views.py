@@ -14,8 +14,8 @@ scheduler.start()
 
 
 # Create your views here.
-handler = WebhookHandler('fe1c60309296f35f05cfb0001f06a672')
-line_bot_api = LineBotApi('t6f/vtOEI0ww+O8zMW6alZtHq+3rhCmnb7vwin/IzFhKWSVg95r/XxJG4kWkk35cq42RgrzjxV63j2KmLZfMvTG36aE5+i3aqkrCraRbODVZrVtwZlgRp9QUqQ7ootIWqsabKGhrVC0pHEdIF5hq2wdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('654321')
+line_bot_api = LineBotApi('123456789')
 
 
 @csrf_exempt
@@ -37,7 +37,7 @@ def callback(request):
 ## 每天的排程
 p="t"
 def push_message(p):
-    user_id="U0bc9c3e3b5de7dd56e1388f8241cd29d"
+    user_id="<user_id>"
     # line_bot_api.push_message( user_id, TextSendMessage(text="最新消息!!!"))
     line_bot_api.push_message( user_id, carousel_template_message())
 
