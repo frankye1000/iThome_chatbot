@@ -7,12 +7,12 @@ from linebot.models import (
 from .crawl_ithome import crawl_ithome
 
 def carousel_template_message():
-    print(len(crawl_ithome()[0][3]))
-    print(len(crawl_ithome()[1][3]))
-    print(len(crawl_ithome()[2][3]))
-    print(len(crawl_ithome()[3][3]))
-    print(len(crawl_ithome()[4][3]))
-    print("*******************************************************************")
+    # print(len(crawl_ithome()[0][3]))
+    # print(len(crawl_ithome()[1][3]))
+    # print(len(crawl_ithome()[2][3]))
+    # print(len(crawl_ithome()[3][3]))
+    # print(len(crawl_ithome()[4][3]))
+    # print("*******************************************************************")
 
 
 
@@ -22,7 +22,7 @@ def carousel_template_message():
         columns=[
             CarouselColumn(
                 thumbnail_image_url = crawl_ithome()[0][3],
-                title=crawl_ithome()[0][0][:40],
+                title=crawl_ithome()[0][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
                     URITemplateAction(
