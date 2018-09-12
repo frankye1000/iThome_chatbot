@@ -38,10 +38,10 @@ def callback(request):
 p="t"
 def push_message(p):
     user_id="U0bc9c3e3b5de7dd56e1388f8241cd29d"
-    line_bot_api.push_message( user_id, TextSendMessage(text="I'm a test job!"))
+    # line_bot_api.push_message( user_id, TextSendMessage(text="最新消息!!!"))
     line_bot_api.push_message( user_id, carousel_template_message())
 
-scheduler.add_job(push_message , "interval", minutes=1, args=p)
+scheduler.add_job(push_message , "interval", minutes=60, args=p)
 register_events(scheduler)
 
 
@@ -56,5 +56,4 @@ def handle_follow_event(event):
     line_bot_api.push_message(event.source.user_id, StickerSendMessage(package_id='1', sticker_id='13'))
     line_bot_api.push_message(event.source.user_id,
                                TextSendMessage(text="每日接收最新的iThome資訊"))
-    line_bot_api.push_message(event.source.user_id,
-                               TextSendMessage(text="每日晚上六點準時更新"))
+

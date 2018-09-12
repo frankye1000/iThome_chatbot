@@ -7,15 +7,6 @@ from linebot.models import (
 from .crawl_ithome import crawl_ithome
 
 def carousel_template_message():
-    # print(len(crawl_ithome()[0][3]))
-    # print(len(crawl_ithome()[1][3]))
-    # print(len(crawl_ithome()[2][3]))
-    # print(len(crawl_ithome()[3][3]))
-    # print(len(crawl_ithome()[4][3]))
-    # print("*******************************************************************")
-
-
-
     carousel_template_message = TemplateSendMessage(
     alt_text='Carousel template',
     template=CarouselTemplate(
@@ -80,11 +71,6 @@ def carousel_template_message():
 
                 ]
             )
-
-
-
-
-
 
         ]))
     return carousel_template_message

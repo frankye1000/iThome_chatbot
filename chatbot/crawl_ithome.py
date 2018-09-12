@@ -31,11 +31,10 @@ def crawl_ithome():
             photo = select_photo[0].get('src')
 
             if day == today:
-                re.append((title[:40],url,day,photo))
+                re.append((title[:40],url,day,photo)) #title只能40個字
 
     return re
 
-print(crawl_ithome())
 # ## "依序"一次插入一筆資料
 # count=1
 # insert_data = """INSERT INTO IThome VALUES (%s, %s)"""
