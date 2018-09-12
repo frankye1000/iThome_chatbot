@@ -16,10 +16,6 @@ def carousel_template_message():
                 title=crawl_ithome()[0][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
-                    PostbackTemplateAction(
-                        label='日期',
-                        data=crawl_ithome()[0][2]
-                    ),
                     URITemplateAction(
                         label='更多',
                         uri = crawl_ithome()[0][1]
@@ -32,10 +28,6 @@ def carousel_template_message():
                 title=crawl_ithome()[1][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
-                    PostbackTemplateAction(
-                        label='日期',
-                        data=crawl_ithome()[1][2]
-                    ),
                     URITemplateAction(
                         label='更多',
                         uri=crawl_ithome()[1][1]
@@ -48,10 +40,6 @@ def carousel_template_message():
                 title=crawl_ithome()[2][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
-                    PostbackTemplateAction(
-                        label='日期',
-                        data=crawl_ithome()[2][2]
-                    ),
                     URITemplateAction(
                         label='更多',
                         uri=crawl_ithome()[2][1]
@@ -64,10 +52,6 @@ def carousel_template_message():
                 title=crawl_ithome()[3][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
-                    PostbackTemplateAction(
-                        label='日期',
-                        data=crawl_ithome()[3][2]
-                    ),
                     URITemplateAction(
                         label='更多',
                         uri=crawl_ithome()[3][1]
@@ -80,10 +64,6 @@ def carousel_template_message():
                 title=crawl_ithome()[4][0],
                 text='想了解更多資訊\n請點擊『更多』',
                 actions=[
-                    PostbackTemplateAction(
-                        label='日期',
-                        data=crawl_ithome()[4][2]
-                    ),
                     URITemplateAction(
                         label='更多',
                         uri=crawl_ithome()[4][1]
