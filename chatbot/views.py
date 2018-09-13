@@ -37,11 +37,15 @@ def callback(request):
 ## 每天的排程
 p="t"
 def push_message(p):
-    user_id="<user_id>"
-    # line_bot_api.push_message( user_id, TextSendMessage(text="最新消息!!!"))
-    line_bot_api.push_message( user_id, carousel_template_message())
+    user_id=<user_id>
+    if carousel_template_message()=="NoNews":
+        line_bot_api.push_message(user_id, TextSendMessage(text="沒有最新新聞"))
+    else:
+        for template in carousel_template_message():
+            line_bot_api.push_message( user_id, template)
 
-scheduler.add_job(push_message , "interval", hours=10, args=p)
+
+scheduler.add_job(push_message , "interval", hours=6, args=p)
 register_events(scheduler)
 
 
