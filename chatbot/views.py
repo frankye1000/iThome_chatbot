@@ -38,10 +38,12 @@ def callback(request):
 p="t"
 def push_message(p):
     user_id=<user_id>
-    if carousel_template_message()=="NoNews":
+    carousel_template = carousel_template_message()
+    if carousel_template=="NoNews":
         line_bot_api.push_message(user_id, TextSendMessage(text="沒有最新新聞"))
     else:
-        for template in carousel_template_message():
+
+        for template in carousel_template:
             line_bot_api.push_message( user_id, template)
 
 
